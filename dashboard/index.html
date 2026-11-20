@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Launch Radar</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="mark" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
+  <div class="wordmark">Token Launch Radar<small id="tagline">pre-token protocols, ranked by implied launch value</small></div>
+  <div class="meta" id="meta"></div>
+</header>
+
+<main>
+  <section class="hero" id="hero"></section>
+
+  <section class="top10" id="top10"></section>
+
+  <nav class="controls" id="controls">
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-tab="pretoken">Pre-token board</button>
+      <button class="tab" data-tab="live">Live token</button>
+    </div>
+    <input id="q" type="search" placeholder="Search protocol, category, chain">
+    <select id="category" aria-label="Category"></select>
+    <select id="chain" aria-label="Chain"></select>
+    <div class="tiers" id="tiers">
+      <button class="tier on" data-tier="all">All</button>
+      <button class="tier" data-tier="watchlist">Watchlist</button>
+      <button class="tier" data-tier="early">Early</button>
+    </div>
+    <p id="count"></p>
+  </nav>
+
+  <section class="tablewrap">
+    <table id="board">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+    <p class="empty" id="empty" hidden></p>
+  </section>
+
+  <section class="model" id="model"></section>
+
+  <footer>
+    <p>Every protocol here records no token in the snapshot; implied value is this radar&rsquo;s own estimate, built only from the snapshot&rsquo;s figures &mdash; it is not a prediction that a token will launch, and a farm plan is activity, not a promise of an airdrop.</p>
+    <p>Snapshot: <span id="src"></span> &middot; built by the token launch radar entry; the same model writes board.json, so every number on this page can be checked against it.</p>
+  </footer>
+</main>
+
+<aside id="detail" class="detail" hidden></aside>
+<script src="../data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
